@@ -24,9 +24,9 @@
       <th><%= order @search, :by => :name, :as => t("name") %></th>
       <th><%= order @search, :by => :price, :as => t("master_price") %></th>
     <% end %>
-    <th>
-      <% hook :admin_products_index_header_actions %>
-    </th>
+    <% hook :admin_products_index_header_actions do %>
+      <th></th>
+    <% end %>
   </tr>
 <% @collection.each do |product| %>
   <tr <%= 'style="color:red;"' unless product.deleted_at.nil? %> id="<%= dom_id product %>">
